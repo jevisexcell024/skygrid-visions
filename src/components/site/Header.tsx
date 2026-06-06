@@ -1,5 +1,6 @@
-import { GraduationCap, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import kumoraLogo from "@/assets/kumora-logo.png.asset.json";
 
 const NAV = ["Features", "Navigation", "Admin", "Pricing", "Testimonials", "Blog"];
 
@@ -7,15 +8,10 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/70 border-b border-border/50">
       <div className="container-1400 flex h-20 items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5 group">
-          <div className="relative">
-            <div className="absolute inset-0 bg-amber-brand rounded-lg blur-lg opacity-50 group-hover:opacity-80 transition-opacity" />
-            <div className="relative h-10 w-10 rounded-lg bg-amber-brand grid place-items-center">
-              <GraduationCap className="h-5 w-5 text-background" strokeWidth={2.5} />
-            </div>
-          </div>
-          <span className="font-display text-xl font-bold tracking-tight">Kumora</span>
+        <a href="#" className="flex items-center">
+          <img src={kumoraLogo.url} alt="Kumora" className="h-10 w-auto" />
         </a>
+
 
         <nav className="hidden lg:flex items-center gap-8">
           {NAV.map((item) => (
