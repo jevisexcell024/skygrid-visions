@@ -12,7 +12,7 @@ const NAV: { label: string; to: string }[] = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/85 border-b border-border">
+    <header className="sticky top-0 z-50 w-full bg-primary text-primary-foreground border-b border-primary">
       <div className="container-1400 flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center">
           <img src={kumoraLogo.url} alt="Kumora" className="h-9 w-auto" />
@@ -23,8 +23,8 @@ export function Header() {
             <Link
               key={item.to}
               to={item.to}
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
-              activeProps={{ className: "text-foreground" }}
+              className="text-sm font-medium text-primary-foreground/70 hover:text-primary-foreground transition-colors rounded-none"
+              activeProps={{ className: "text-primary-foreground" }}
             >
               {item.label}
             </Link>
@@ -33,7 +33,7 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           <Link to="/contact" className="hidden sm:inline-flex">
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium rounded-md">
+            <Button className="bg-accent text-accent-foreground hover:bg-accent/90 font-medium rounded-none">
               Get in touch
             </Button>
           </Link>
