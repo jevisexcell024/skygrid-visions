@@ -65,7 +65,7 @@
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0;
 
   /* Clean, minimal, enterprise — white canvas with burgundy + amber brand */
   --background: oklch(0.995 0 0);
