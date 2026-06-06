@@ -4,21 +4,21 @@ import blog3 from "@/assets/blog-3.png";
 
 const POSTS = [
   {
-    img: blog1, tag: "Migration",
-    title: "Migrating 200 microservices to CloudNova in 72 hours",
-    summary: "A practical playbook for zero-downtime migrations at scale.",
+    img: blog1, tag: "Case Study",
+    title: "How Apex University onboarded 18,000 students in a single semester",
+    summary: "A playbook for rolling out a campus OS without disrupting the academic calendar.",
     author: "Elena Park", date: "Mar 12, 2025", read: "8 min read",
   },
   {
     img: blog2, tag: "Security",
-    title: "Anatomy of a modern DDoS attack — and how we stopped it",
-    summary: "Breaking down the largest L7 attack our network has seen.",
+    title: "Inside Kumora's 8-minute campus evacuation drill",
+    summary: "Breaking down the alert flow, roll-call mechanics, and lessons learned.",
     author: "Devon Wright", date: "Mar 5, 2025", read: "12 min read",
   },
   {
-    img: blog3, tag: "Performance",
-    title: "Why we switched our entire fleet to NVMe-over-Fabrics",
-    summary: "The 4× IOPS bump nobody talks about, with real benchmarks.",
+    img: blog3, tag: "AI",
+    title: "Why we built our attendance engine on edge-side facial recognition",
+    summary: "The privacy, latency, and cost reasons NFC + on-device AI beat the cloud.",
     author: "Riya Mehta", date: "Feb 28, 2025", read: "6 min read",
   },
 ];
@@ -33,7 +33,7 @@ export function BlogGrid() {
               Insights
             </div>
             <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-              From the <span className="text-gradient-amber">engineering blog</span>
+              From the <span className="text-gradient-amber">Kumora journal</span>
             </h2>
           </div>
           <a href="#" className="text-sm font-medium text-amber-brand hover:underline">View all articles →</a>

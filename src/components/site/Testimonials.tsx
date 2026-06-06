@@ -2,32 +2,32 @@ import { Star, Quote } from "lucide-react";
 
 const TS = [
   {
-    name: "Sara Lindgren", role: "CTO, Northwind Labs",
-    text: "We migrated 80+ microservices in a weekend. Latency dropped 60% and our infra bill is half what we paid before. CloudNova just gets out of the way.",
-    initials: "SL",
+    name: "Dr. Amara Okonkwo", role: "Vice Chancellor · Apex University",
+    text: "Kumora transformed how we manage our 18,000-student campus. The smart attendance system alone saved us 40 staff-hours per week. The AI insights are genuinely remarkable.",
+    initials: "AO",
   },
   {
-    name: "Marcus Okafor", role: "Lead Engineer, Vexa Health",
-    text: "The auto-scaling handled our Black Friday spike without a single alert. Support actually responded in seconds — by humans who knew the product.",
-    initials: "MO",
+    name: "Marcus Thompson", role: "Head of IT · Northfield College",
+    text: "Our IT team was skeptical about migration, but the Kumora onboarding was flawless. The API documentation is world-class and integration with our existing LMS took two days.",
+    initials: "MT",
   },
   {
-    name: "Yuki Tanaka", role: "Founder, Driftboard",
-    text: "Zero-config SSL, instant deploys, and a global edge network for less than I was paying for a single VPS. It feels like cheating.",
-    initials: "YT",
+    name: "Sandra Kwame", role: "Campus Security Director · Global Tech Institute",
+    text: "The emergency alert system is what sold us. During our campus drill, we evacuated 4,200 students with verified roll-call in under 8 minutes. That's Kumora's power.",
+    initials: "SK",
   },
 ];
 
 export function Testimonials() {
   return (
-    <section className="section-pad">
+    <section id="testimonials" className="section-pad">
       <div className="container-1400">
         <div className="max-w-2xl mx-auto text-center mb-14">
           <div className="inline-flex px-3 py-1 rounded-full glass text-xs font-medium text-amber-brand uppercase tracking-wider">
-            Loved by teams
+            What Institutions Say
           </div>
           <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-            12,000+ teams ship on <span className="text-gradient-amber">CloudNova</span>
+            Campus leaders love <span className="text-gradient-amber">Kumora</span>
           </h2>
         </div>
 

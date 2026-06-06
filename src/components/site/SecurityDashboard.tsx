@@ -1,27 +1,27 @@
-import { Shield, Activity, AlertTriangle, HardDriveDownload } from "lucide-react";
+import { Shield, Activity, Siren, HardDriveDownload } from "lucide-react";
 import securityImg from "@/assets/security-dashboard.png";
 
 const ITEMS = [
-  { icon: Shield, title: "Web Application Firewall", desc: "Block OWASP Top 10 attacks before they reach your origin." },
-  { icon: Activity, title: "Real-time Monitoring", desc: "Continuous traffic analysis with anomaly detection." },
-  { icon: AlertTriangle, title: "Threat Detection", desc: "AI-driven alerts for unusual behavior across your stack." },
-  { icon: HardDriveDownload, title: "Automated Backups", desc: "Encrypted snapshots every hour. Restore in one click." },
+  { icon: Shield, title: "Access Control", desc: "Biometric & RFID access for every gate, hostel, lab, and restricted facility." },
+  { icon: Activity, title: "Real-time Monitoring", desc: "Continuous CCTV analysis with intelligent anomaly detection across campus." },
+  { icon: Siren, title: "Emergency Alerts", desc: "Multi-channel broadcasts with evacuation routing and verified roll-call in minutes." },
+  { icon: HardDriveDownload, title: "Incident Reporting", desc: "One-tap incident logging with location, evidence capture, and auto-escalation." },
 ];
 
 export function SecurityDashboard() {
   return (
-    <section id="security" className="section-pad relative">
+    <section id="admin" className="section-pad relative">
       <div className="container-1400 grid lg:grid-cols-2 gap-16 items-center">
         <div>
           <div className="inline-flex px-3 py-1 rounded-full glass text-xs font-medium text-amber-brand uppercase tracking-wider">
-            Security
+            Security & Admin
           </div>
           <h2 className="mt-4 text-4xl md:text-5xl font-bold leading-tight">
-            Defense in depth, <span className="text-gradient-amber">by default</span>
+            Command every dimension of <span className="text-gradient-amber">campus operations</span>
           </h2>
           <p className="mt-4 text-muted-foreground text-lg max-w-lg">
-            Security isn't a feature — it's the foundation. Every CloudNova plan ships with
-            enterprise-grade protection out of the box.
+            The Kumora admin portal gives institutional leadership a real-time, bird's-eye view
+            of everything happening on campus — consolidated into a single, intelligent interface.
           </p>
 
           <div className="mt-10 space-y-5">
@@ -45,7 +45,7 @@ export function SecurityDashboard() {
         <div className="relative">
           <div className="absolute inset-10 rounded-full bg-burgundy/40 blur-3xl" />
           <div className="absolute inset-20 rounded-full bg-amber-brand/20 blur-3xl animate-pulse-glow" />
-          <img src={securityImg} alt="Security dashboard with firewall, monitoring and threat detection panels"
+          <img src={securityImg} alt="Kumora admin dashboard with security, attendance and operations panels"
             width={1024} height={1024} loading="lazy"
             className="relative w-full h-auto animate-float drop-shadow-2xl" />
         </div>
