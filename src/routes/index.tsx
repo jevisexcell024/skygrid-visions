@@ -81,17 +81,18 @@ function Index() {
       <Header />
       <Hero />
 
-      {/* Stats band */}
-      <section className="border-y border-border bg-surface">
+      {/* Stats band — DTI-style burgundy strip */}
+      <section className="bg-primary text-primary-foreground">
         <div className="container-1400 py-14 grid grid-cols-2 md:grid-cols-4 gap-8">
           {STATS.map((s) => (
             <div key={s.label}>
-              <div className="font-display text-4xl md:text-5xl font-medium text-ink">{s.value}</div>
-              <div className="mt-2 text-sm text-muted-foreground">{s.label}</div>
+              <div className="font-display text-4xl md:text-5xl font-medium" style={{ color: "var(--amber-brand)" }}>{s.value}</div>
+              <div className="mt-2 text-sm text-primary-foreground/75">{s.label}</div>
             </div>
           ))}
         </div>
       </section>
+
 
       {/* Pillars */}
       <section className="section-pad">
