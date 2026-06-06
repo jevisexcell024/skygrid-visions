@@ -91,7 +91,7 @@ function CaseStudyPage() {
         <section className="pb-16">
           <div className="container-narrow">
             <div className="grid sm:grid-cols-3 gap-4">
-              {study.metrics.map((m) => (
+              {study.metrics.map((m: { value: string; label: string }) => (
                 <div key={m.label} className="rounded-xl border border-border bg-card p-6">
                   <div className="font-display text-4xl font-medium text-ink">{m.value}</div>
                   <div className="mt-2 text-sm text-muted-foreground">{m.label}</div>
@@ -121,7 +121,7 @@ function CaseStudyPage() {
               </div>
             </div>
             <ul className="space-y-4">
-              {study.approach.map((a, i) => (
+              {study.approach.map((a: string, i: number) => (
                 <li key={i} className="flex gap-4 text-lg leading-relaxed text-foreground/90">
                   <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
                   <span>{a}</span>
