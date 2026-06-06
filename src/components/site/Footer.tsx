@@ -1,5 +1,7 @@
-import { GraduationCap, Twitter, Github, Linkedin, Youtube, ArrowRight } from "lucide-react";
+import { Twitter, Github, Linkedin, Youtube, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import kumoraLogo from "@/assets/kumora-logo.png.asset.json";
+
 
 const COLS = [
   { title: "Product", items: ["Student Management", "Campus Navigation", "Smart Attendance", "Security", "Admin Portal"] },
