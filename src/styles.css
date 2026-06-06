@@ -67,40 +67,40 @@
 :root {
   --radius: 0.75rem;
 
-  /* Clean, minimal, enterprise — white canvas, deep ink, single blue brand */
+  /* Clean, minimal, enterprise — white canvas with burgundy + amber brand */
   --background: oklch(0.995 0 0);
-  --foreground: oklch(0.18 0.02 260);
-  --ink: oklch(0.14 0.015 260);
+  --foreground: oklch(0.18 0.02 20);
+  --ink: oklch(0.14 0.015 20);
 
-  --surface: oklch(0.985 0.002 250);
-  --surface-2: oklch(0.965 0.003 250);
+  --surface: oklch(0.985 0.003 60);
+  --surface-2: oklch(0.965 0.005 60);
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.02 260);
+  --card-foreground: oklch(0.18 0.02 20);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.02 260);
+  --popover-foreground: oklch(0.18 0.02 20);
 
-  /* Brand: deep TrueHorizon-style blue. Token name kept for compatibility. */
-  --amber-brand: oklch(0.45 0.13 235);
-  /* Secondary accent: very dark navy/burgundy substitute */
-  --burgundy: oklch(0.22 0.04 260);
+  /* Brand: burgundy #66001F (primary) + amber #FFC107 (accent) — used as SOLID colors, never gradient. */
+  --burgundy: oklch(0.27 0.135 14);
+  --amber-brand: oklch(0.832 0.169 84);
 
-  --primary: oklch(0.45 0.13 235);
+  --primary: oklch(0.27 0.135 14);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.96 0.005 250);
-  --secondary-foreground: oklch(0.18 0.02 260);
+  --secondary: oklch(0.965 0.005 60);
+  --secondary-foreground: oklch(0.18 0.02 20);
 
-  --muted: oklch(0.96 0.005 250);
-  --muted-foreground: oklch(0.5 0.015 260);
-  --accent: oklch(0.45 0.13 235);
-  --accent-foreground: oklch(1 0 0);
+  --muted: oklch(0.965 0.005 60);
+  --muted-foreground: oklch(0.5 0.015 20);
+  --accent: oklch(0.832 0.169 84);
+  --accent-foreground: oklch(0.18 0.02 20);
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(1 0 0);
 
-  --border: oklch(0.92 0.005 250);
-  --input: oklch(0.92 0.005 250);
-  --ring: oklch(0.45 0.13 235);
+  --border: oklch(0.92 0.005 60);
+  --input: oklch(0.92 0.005 60);
+  --ring: oklch(0.27 0.135 14);
 }
+
 
 @layer base {
   * { border-color: var(--color-border); }
