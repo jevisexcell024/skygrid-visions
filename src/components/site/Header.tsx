@@ -10,7 +10,7 @@ export function Header() {
         <a href="#" className="flex items-center gap-2.5 group">
           <div className="relative">
             <div className="absolute inset-0 bg-amber-brand rounded-lg blur-lg opacity-50 group-hover:opacity-80 transition-opacity" />
-            <div className="relative h-10 w-10 rounded-lg bg-gradient-to-br from-amber-brand to-burgundy grid place-items-center">
+            <div className="relative h-10 w-10 rounded-lg bg-amber-brand grid place-items-center">
               <GraduationCap className="h-5 w-5 text-background" strokeWidth={2.5} />
             </div>
           </div>

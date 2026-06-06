@@ -26,7 +26,7 @@ export function InfrastructureMap() {
         </div>
 
         <div className="relative rounded-3xl overflow-hidden glass border-white/10 p-4 md:p-10">
-          <div className="absolute inset-0 bg-gradient-to-b from-burgundy/10 via-transparent to-amber-brand/5" />
+          <div className="absolute inset-0 bg-burgundy/10" />
           <div className="relative aspect-[16/9]">
             <img src={campusNav} alt="Kumora campus navigation map with turn-by-turn directions"
               width={1600} height={900} loading="lazy"

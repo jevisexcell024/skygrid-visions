@@ -36,7 +36,7 @@ export function Testimonials() {
             <div key={t.name} className="relative rounded-2xl glass p-8 shadow-card hover:-translate-y-1 transition-transform">
               <Quote className="absolute top-6 right-6 h-8 w-8 text-amber-brand/30" />
               <div className="flex items-center gap-3">
-                <div className="h-12 w-12 rounded-full bg-gradient-to-br from-amber-brand to-burgundy grid place-items-center font-bold text-background">
+                <div className="h-12 w-12 rounded-full bg-amber-brand grid place-items-center font-bold text-background">
                   {t.initials}
                 </div>
                 <div>

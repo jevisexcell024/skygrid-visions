@@ -41,7 +41,7 @@ export function ServiceCards() {
                 className="group relative rounded-2xl p-8 glass border-white/10 hover:border-amber-brand/40 hover:-translate-y-2 transition-all duration-300 overflow-hidden">
                 <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-amber-brand/0 group-hover:bg-amber-brand/10 blur-2xl transition-all duration-500" />
                 <div className="relative">
-                  <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-burgundy to-burgundy/40 grid place-items-center text-amber-brand group-hover:from-amber-brand group-hover:to-amber-brand/60 group-hover:text-background transition-all">
+                  <div className="h-14 w-14 rounded-2xl bg-burgundy grid place-items-center text-amber-brand group-hover:bg-amber-brand group-hover:text-background transition-all">
                     <Icon className="h-6 w-6" strokeWidth={2} />
                   </div>
                   <h3 className="mt-6 font-display text-xl font-bold">{s.title}</h3>

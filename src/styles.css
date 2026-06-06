@@ -113,16 +113,12 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    background-image:
-      radial-gradient(ellipse 1200px 700px at 80% -10%, color-mix(in oklab, var(--burgundy) 25%, transparent), transparent 60%),
-      radial-gradient(ellipse 1000px 600px at -10% 30%, color-mix(in oklab, var(--amber-brand) 12%, transparent), transparent 60%);
-    background-attachment: fixed;
   }
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
 }
 
 @utility glass {
-  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  background: rgba(255,255,255,0.03);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255,255,255,0.08);
@@ -133,10 +129,7 @@
 }
 
 @utility text-gradient-amber {
-  background: linear-gradient(135deg, #FFD54F, #FFC107, #FF8A00);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #FFC107;
 }
 
 @utility section-pad {
