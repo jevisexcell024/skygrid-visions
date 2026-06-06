@@ -4,17 +4,17 @@ import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-24 md:pt-32 pb-20 md:pb-28">
+    <section className="relative overflow-hidden bg-ink text-white pt-24 md:pt-32 pb-20 md:pb-28">
       <div className="container-1400">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
           <div className="animate-fade-up">
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.02] tracking-tight">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.02] tracking-tight text-white">
               The intelligent OS
               <br />
-              for the <span className="text-primary">modern campus</span>
+              for the <span style={{ color: "var(--amber-brand)" }}>modern campus</span>
             </h1>
 
-            <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
+            <p className="mt-8 text-lg md:text-xl text-white/70 max-w-xl leading-relaxed">
               Kumora unifies student management, navigation, security, scheduling, and
               analytics into one coherent platform — purpose-built for universities and
               learning institutions.
@@ -27,7 +27,7 @@ export function Hero() {
                 </Button>
               </Link>
               <Link to="/customers">
-                <Button size="lg" variant="outline" className="h-12 px-6 border-border bg-card text-foreground hover:bg-secondary font-medium rounded-md">
+                <Button size="lg" variant="outline" className="h-12 px-6 border-white/25 bg-transparent text-white hover:bg-white/10 hover:text-white font-medium rounded-md">
                   View case studies
                 </Button>
               </Link>
@@ -37,18 +37,19 @@ export function Hero() {
           <HeroPanel />
         </div>
 
-        <div className="mt-24 md:mt-32 border-t border-border pt-10">
-          <p className="text-xs font-medium tracking-[0.15em] uppercase text-muted-foreground">
+        <div className="mt-24 md:mt-32 border-t border-white/10 pt-10">
+          <p className="text-xs font-medium tracking-[0.15em] uppercase text-white/50">
             Trusted by leading institutions
           </p>
-          <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-x-10 gap-y-6 items-center opacity-60">
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-x-10 gap-y-6 items-center">
             {["APEX UNIVERSITY", "NORTHFIELD", "GLOBAL TECH", "MERIDIAN", "ATLAS COLLEGE"].map((n) => (
-              <div key={n} className="font-display text-base font-semibold tracking-wider text-foreground/70">
+              <div key={n} className="font-display text-base font-semibold tracking-wider text-white/65">
                 {n}
               </div>
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );
