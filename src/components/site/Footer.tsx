@@ -1,63 +1,75 @@
-import { Twitter, Github, Linkedin, Youtube, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import kumoraLogo from "@/assets/kumora-logo.png.asset.json";
 
-
-const COLS = [
-  { title: "Product", items: ["Student Management", "Campus Navigation", "Smart Attendance", "Security", "Admin Portal"] },
-  { title: "Solutions", items: ["Universities", "Colleges", "K–12 Schools", "Multi-campus", "Government"] },
-  { title: "Resources", items: ["Documentation", "API Reference", "Case Studies", "Journal", "Community"] },
-  { title: "Company", items: ["About", "Careers", "Press Kit", "Partners", "Contact"] },
+const COLS: { title: string; items: { label: string; to: string }[] }[] = [
+  {
+    title: "Product",
+    items: [
+      { label: "Solutions", to: "/solutions" },
+      { label: "Customers", to: "/customers" },
+      { label: "Resources", to: "/resources" },
+    ],
+  },
+  {
+    title: "Company",
+    items: [
+      { label: "About", to: "/about" },
+      { label: "Contact", to: "/contact" },
+    ],
+  },
 ];
 
 export function Footer() {
   return (
-    <footer className="relative mt-10" style={{ backgroundColor: "#111111" }}>
+    <footer className="relative mt-20 border-t border-border bg-surface">
       <div className="container-1400">
-        <div className="py-20 border-b border-white/5">
-          <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 items-center">
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05]">
-              Transform your campus <span className="text-gradient-amber">infrastructure today</span>.
+        <div className="py-20 border-b border-border">
+          <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 items-end">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.05] tracking-tight">
+              Transform your campus<br />
+              <span className="text-primary">infrastructure today.</span>
             </h2>
             <div className="flex flex-wrap gap-3 lg:justify-end">
-              <Button size="lg" className="h-14 px-8 bg-amber-brand text-background hover:bg-amber-brand/90 font-semibold shadow-glow-amber">
-                Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8 border-white/15 bg-white/5 hover:bg-white/10">
-                Book a Demo
-              </Button>
+              <Link to="/contact">
+                <Button size="lg" className="h-12 px-6 bg-primary text-primary-foreground hover:bg-primary/90 font-medium rounded-md">
+                  Get in touch <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link to="/customers">
+                <Button size="lg" variant="outline" className="h-12 px-6 border-border bg-card text-foreground hover:bg-secondary font-medium rounded-md">
+                  View customers
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
 
-        <div className="py-16 grid lg:grid-cols-[1.4fr_repeat(4,1fr)] gap-10">
+        <div className="py-14 grid lg:grid-cols-[1.6fr_repeat(2,1fr)] gap-10">
           <div>
-            <a href="#" className="flex items-center">
-              <img src={kumoraLogo.url} alt="Kumora" className="h-10 w-auto" />
-            </a>
-
+            <Link to="/" className="flex items-center">
+              <img src={kumoraLogo.url} alt="Kumora" className="h-9 w-auto" />
+            </Link>
             <p className="mt-4 text-sm text-muted-foreground max-w-xs leading-relaxed">
               The intelligent operating system for modern campuses. One platform for every department.
             </p>
-            <form className="mt-6 flex gap-2 max-w-sm">
-              <input
-                type="email"
-                placeholder="you@institution.edu"
-                className="flex-1 h-11 px-4 rounded-lg bg-white/5 border border-white/10 text-sm focus:outline-none focus:border-amber-brand/60"
-              />
-              <Button className="h-11 px-4 bg-amber-brand text-background hover:bg-amber-brand/90 font-semibold">
-                Subscribe
-              </Button>
-            </form>
           </div>
 
           {COLS.map((col) => (
             <div key={col.title}>
-              <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-foreground/90">{col.title}</h4>
-              <ul className="mt-4 space-y-3">
+              <h4 className="font-display text-xs font-semibold uppercase tracking-[0.15em] text-foreground/90">
+                {col.title}
+              </h4>
+              <ul className="mt-5 space-y-3">
                 {col.items.map((i) => (
-                  <li key={i}>
-                    <a href="#" className="text-sm text-muted-foreground hover:text-amber-brand transition-colors">{i}</a>
+                  <li key={i.label}>
+                    <Link
+                      to={i.to}
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {i.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -65,15 +77,8 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="py-7 border-t border-white/5 flex flex-col md:flex-row gap-4 items-center justify-between">
+        <div className="py-7 border-t border-border flex flex-col md:flex-row gap-4 items-center justify-between">
           <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Kumora, Inc. All rights reserved.</p>
-          <div className="flex items-center gap-4">
-            {[Twitter, Github, Linkedin, Youtube].map((Icon, i) => (
-              <a key={i} href="#" className="h-9 w-9 rounded-lg bg-white/5 grid place-items-center hover:bg-amber-brand hover:text-background transition-colors">
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
           <div className="flex gap-5 text-xs text-muted-foreground">
             <a href="#" className="hover:text-foreground">Privacy</a>
             <a href="#" className="hover:text-foreground">Terms</a>
