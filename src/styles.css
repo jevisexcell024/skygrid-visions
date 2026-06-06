@@ -35,17 +35,14 @@
   --color-amber-brand: var(--amber-brand);
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
 
-  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
 
-  --shadow-glow-amber: 0 0 60px -10px color-mix(in oklab, var(--amber-brand) 60%, transparent);
-  --shadow-glow-burgundy: 0 0 80px -10px color-mix(in oklab, var(--burgundy) 70%, transparent);
-  --shadow-card: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
-
-  --gradient-hero: radial-gradient(ellipse at top left, color-mix(in oklab, var(--burgundy) 35%, transparent), transparent 60%), radial-gradient(ellipse at bottom right, color-mix(in oklab, var(--amber-brand) 25%, transparent), transparent 60%);
-  --gradient-amber: linear-gradient(135deg, #FFC107, #FF8A00);
-  --gradient-burgundy: linear-gradient(135deg, #8B0028, #66001F);
+  --shadow-glow-amber: 0 0 0 1px color-mix(in oklab, var(--amber-brand) 18%, transparent), 0 12px 40px -16px color-mix(in oklab, var(--amber-brand) 40%, transparent);
+  --shadow-glow-burgundy: 0 0 0 1px color-mix(in oklab, var(--burgundy) 16%, transparent);
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 32px -12px rgba(15, 23, 42, 0.08);
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-float-slow: float 9s ease-in-out infinite;
@@ -56,54 +53,53 @@
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-18px); }
+  50% { transform: translateY(-14px); }
 }
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.1); }
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
 }
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
-}
-@keyframes dash {
-  to { stroke-dashoffset: -200; }
 }
 
 :root {
-  --radius: 0.875rem;
+  --radius: 0.75rem;
 
-  --background: oklch(0.13 0.02 280);
-  --foreground: oklch(0.97 0.01 90);
+  /* Clean, minimal, enterprise — white canvas, deep ink, single blue brand */
+  --background: oklch(0.995 0 0);
+  --foreground: oklch(0.18 0.02 260);
+  --ink: oklch(0.14 0.015 260);
 
-  --surface: oklch(0.17 0.02 280);
-  --surface-2: oklch(0.21 0.025 280);
+  --surface: oklch(0.985 0.002 250);
+  --surface-2: oklch(0.965 0.003 250);
 
-  --card: oklch(0.17 0.02 280);
-  --card-foreground: oklch(0.97 0.01 90);
-  --popover: oklch(0.17 0.02 280);
-  --popover-foreground: oklch(0.97 0.01 90);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 260);
 
-  /* #FFC107 amber */
-  --amber-brand: oklch(0.82 0.17 84);
-  /* #66001F burgundy */
-  --burgundy: oklch(0.32 0.16 13);
+  /* Brand: deep TrueHorizon-style blue. Token name kept for compatibility. */
+  --amber-brand: oklch(0.45 0.13 235);
+  /* Secondary accent: very dark navy/burgundy substitute */
+  --burgundy: oklch(0.22 0.04 260);
 
-  --primary: oklch(0.82 0.17 84);
-  --primary-foreground: oklch(0.15 0.02 280);
-  --secondary: oklch(0.32 0.16 13);
-  --secondary-foreground: oklch(0.97 0.01 90);
+  --primary: oklch(0.45 0.13 235);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0.005 250);
+  --secondary-foreground: oklch(0.18 0.02 260);
 
-  --muted: oklch(0.22 0.02 280);
-  --muted-foreground: oklch(0.7 0.02 280);
-  --accent: oklch(0.82 0.17 84);
-  --accent-foreground: oklch(0.15 0.02 280);
+  --muted: oklch(0.96 0.005 250);
+  --muted-foreground: oklch(0.5 0.015 260);
+  --accent: oklch(0.45 0.13 235);
+  --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.6 0.22 25);
-  --destructive-foreground: oklch(0.97 0 0);
+  --destructive-foreground: oklch(1 0 0);
 
-  --border: oklch(1 0 0 / 8%);
-  --input: oklch(1 0 0 / 10%);
-  --ring: oklch(0.82 0.17 84);
+  --border: oklch(0.92 0.005 250);
+  --input: oklch(0.92 0.005 250);
+  --ring: oklch(0.45 0.13 235);
 }
 
 @layer base {
@@ -113,15 +109,23 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.035em;
+    color: var(--color-ink);
+  }
 }
 
+/* Light-theme "card" — subtle bordered surface */
 @utility glass {
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
 }
 
 @utility glow-amber {
@@ -129,18 +133,18 @@
 }
 
 @utility text-gradient-amber {
-  color: #FFC107;
+  color: var(--amber-brand);
 }
 
 @utility section-pad {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 @media (min-width: 768px) {
-  .section-pad { padding-top: 80px; padding-bottom: 80px; }
+  .section-pad { padding-top: 96px; padding-bottom: 96px; }
 }
 @media (min-width: 1024px) {
-  .section-pad { padding-top: 120px; padding-bottom: 120px; }
+  .section-pad { padding-top: 140px; padding-bottom: 140px; }
 }
 
 @utility container-1400 {
@@ -148,6 +152,26 @@
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@utility container-narrow {
+  width: 100%;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@utility eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber-brand);
 }
