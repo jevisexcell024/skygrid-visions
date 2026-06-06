@@ -46,7 +46,7 @@ export function HostingPlans() {
                 key={plan.name}
                 className={`relative rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 ${
                   plan.popular
-                    ? "glass border-amber-brand/40 shadow-glow-amber scale-[1.03] bg-gradient-to-b from-burgundy/15 to-transparent"
+                    ? "glass border-amber-brand/40 shadow-glow-amber scale-[1.03] bg-burgundy/20"
                     : "glass hover:border-white/20"
                 }`}
               >
@@ -71,7 +71,7 @@ export function HostingPlans() {
                     <span className="text-4xl font-bold font-display">Custom</span>
                   )}
                 </div>
-                <div className="my-6 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+                <div className="my-6 h-px bg-white/15" />
                 <ul className="space-y-2.5 text-sm">
                   {plan.specs.map((s) => (
                     <li key={s} className="flex items-center gap-2 text-foreground/90">

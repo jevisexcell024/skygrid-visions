@@ -31,7 +31,7 @@ export function Footer() {
         <div className="py-16 grid lg:grid-cols-[1.4fr_repeat(4,1fr)] gap-10">
           <div>
             <a href="#" className="flex items-center gap-2.5">
-              <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-amber-brand to-burgundy grid place-items-center">
+              <div className="h-10 w-10 rounded-lg bg-amber-brand grid place-items-center">
                 <GraduationCap className="h-5 w-5 text-background" strokeWidth={2.5} />
               </div>
               <span className="font-display text-xl font-bold">Kumora</span>
