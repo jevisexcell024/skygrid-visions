@@ -1,125 +1,107 @@
-import { ArrowRight, PlayCircle, Shield, Zap, Award } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import heroCloud from "@/assets/hero-cloud.png";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden section-pad">
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute top-20 -left-40 h-[500px] w-[500px] rounded-full bg-burgundy/30 blur-[120px]" />
-        <div className="absolute -bottom-20 right-0 h-[600px] w-[600px] rounded-full bg-amber-brand/15 blur-[140px]" />
-        <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.4) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }} />
-      </div>
+    <section className="relative overflow-hidden pt-24 md:pt-32 pb-20 md:pb-28">
+      <div className="container-1400">
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+          <div className="animate-fade-up">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.02] tracking-tight">
+              The intelligent OS
+              <br />
+              for the <span className="text-primary">modern campus</span>
+            </h1>
 
-      <div className="container-1400 grid lg:grid-cols-[45fr_55fr] gap-12 items-center">
-        <div className="animate-fade-up">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-medium">
-            <span className="h-2 w-2 rounded-full bg-amber-brand animate-pulse" />
-            <span className="text-amber-brand">LIVE</span>
-            <span className="text-muted-foreground">·  Now serving 200+ institutions globally</span>
+            <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
+              Kumora unifies student management, navigation, security, scheduling, and
+              analytics into one coherent platform — purpose-built for universities and
+              learning institutions.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Link to="/contact">
+                <Button size="lg" className="h-12 px-6 bg-primary text-primary-foreground hover:bg-primary/90 font-medium rounded-md">
+                  Schedule consultation
+                </Button>
+              </Link>
+              <Link to="/customers">
+                <Button size="lg" variant="outline" className="h-12 px-6 border-border bg-card text-foreground hover:bg-secondary font-medium rounded-md">
+                  View case studies
+                </Button>
+              </Link>
+            </div>
           </div>
 
-          <h1 className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
-            The intelligent OS for
-            <br />
-            <span className="text-gradient-amber">modern campuses</span>.
-          </h1>
-
-          <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
-            Kumora unifies student management, campus navigation, security, scheduling, and
-            analytics into one coherent platform — purpose-built for universities, colleges,
-            and learning institutions.
-          </p>
-
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Button size="lg" className="h-13 px-7 bg-amber-brand text-background hover:bg-amber-brand/90 font-semibold shadow-glow-amber group">
-              Start Free Trial
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button size="lg" variant="outline" className="h-13 px-7 glass border-white/15 hover:bg-white/5">
-              <PlayCircle className="mr-2 h-5 w-5" />
-              Watch Demo
-            </Button>
-          </div>
-
-          <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-amber-brand" /> FERPA Compliant</div>
-            <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-amber-brand" /> 99.97% Uptime</div>
-            <div className="flex items-center gap-2"><Award className="h-4 w-4 text-amber-brand" /> 12M+ Students Managed</div>
-          </div>
+          <HeroPanel />
         </div>
 
-        <HeroIllustration />
+        <div className="mt-24 md:mt-32 border-t border-border pt-10">
+          <p className="text-xs font-medium tracking-[0.15em] uppercase text-muted-foreground">
+            Trusted by leading institutions
+          </p>
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-x-10 gap-y-6 items-center opacity-60">
+            {["APEX UNIVERSITY", "NORTHFIELD", "GLOBAL TECH", "MERIDIAN", "ATLAS COLLEGE"].map((n) => (
+              <div key={n} className="font-display text-base font-semibold tracking-wider text-foreground/70">
+                {n}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
 }
 
-function HeroIllustration() {
+function HeroPanel() {
   return (
-    <div className="relative aspect-square w-full max-w-[700px] mx-auto">
-      <div className="absolute inset-10 rounded-full bg-amber-brand/20 blur-3xl animate-pulse-glow" />
-      <div className="absolute inset-20 rounded-full bg-burgundy/30 blur-3xl" />
+    <div className="relative">
+      <div className="rounded-2xl bg-card border border-border shadow-card p-6 md:p-8">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <span className="h-8 w-8 rounded-md bg-primary/10 grid place-items-center">
+              <span className="h-2.5 w-2.5 rounded-sm bg-primary" />
+            </span>
+            <span className="text-sm font-medium text-foreground">Campus OS Active</span>
+          </div>
+          <div className="flex gap-1">
+            {[0, 1, 2, 3].map((i) => (
+              <span key={i} className="h-3 w-0.5 bg-primary/70" style={{ opacity: 0.4 + i * 0.2 }} />
+            ))}
+          </div>
+        </div>
 
-      <div className="absolute inset-0 animate-spin-slow opacity-60">
-        <svg viewBox="0 0 400 400" className="w-full h-full">
-          <circle cx="200" cy="200" r="180" fill="none" stroke="url(#ringGrad)" strokeWidth="0.5" strokeDasharray="4 8" />
-          <defs>
-            <linearGradient id="ringGrad" x1="0" x2="1">
-              <stop offset="0" stopColor="#FFC107" stopOpacity="0.6" />
-              <stop offset="1" stopColor="#66001F" stopOpacity="0.2" />
-            </linearGradient>
-          </defs>
-        </svg>
+        <div className="mt-8 grid grid-cols-2 gap-3">
+          {[
+            { label: "Students", value: "12,847" },
+            { label: "Attendance", value: "94.7%" },
+            { label: "Uptime", value: "99.97%" },
+            { label: "Faculty", value: "142" },
+          ].map((s) => (
+            <div key={s.label} className="rounded-lg bg-secondary p-4">
+              <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium">
+                {s.label}
+              </div>
+              <div className="mt-1 font-display text-2xl font-medium text-ink">{s.value}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-3 rounded-lg border border-border p-4">
+          <div className="flex items-center justify-between text-xs">
+            <span className="text-muted-foreground font-medium">SYSTEM</span>
+            <span className="text-muted-foreground">Production</span>
+          </div>
+          <div className="mt-1 flex items-end justify-between">
+            <div>
+              <div className="font-display text-lg font-medium text-ink">Autonomous Campus Engine</div>
+              <div className="text-xs text-muted-foreground mt-0.5">1,284 events processed today</div>
+            </div>
+            <ArrowRight className="h-4 w-4 text-primary" />
+          </div>
+        </div>
       </div>
-
-      <img
-        src={heroCloud}
-        alt="Kumora intelligent campus operating system with floating dashboards"
-        width={1024}
-        height={1024}
-        className="relative z-10 w-full h-full object-contain animate-float drop-shadow-2xl"
-      />
-
-      <FloatingStat className="top-6 -left-2 md:left-0" label="Attendance" value="94.7%" accent="amber" delay="0s" />
-      <FloatingStat className="top-1/4 -right-2 md:-right-4" label="Uptime" value="99.97%" accent="green" delay="1.5s" />
-      <FloatingStat className="bottom-16 -left-4 md:-left-6" label="Students" value="12,847" accent="burgundy" delay="0.8s" />
-      <FloatingStat className="bottom-2 right-4" label="Faculty" value="142" accent="amber" delay="2.2s" />
-
-      {[...Array(14)].map((_, i) => (
-        <span
-          key={i}
-          className="absolute h-1 w-1 rounded-full bg-amber-brand"
-          style={{
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            opacity: 0.2 + Math.random() * 0.6,
-            animation: `pulse-glow ${2 + Math.random() * 3}s ease-in-out ${Math.random() * 2}s infinite`,
-            boxShadow: "0 0 8px #FFC107",
-          }}
-        />
-      ))}
-    </div>
-  );
-}
-
-function FloatingStat({
-  className, label, value, accent, delay,
-}: { className: string; label: string; value: string; accent: "amber" | "green" | "burgundy"; delay: string }) {
-  const dot = accent === "amber" ? "bg-amber-brand" : accent === "green" ? "bg-emerald-400" : "bg-burgundy";
-  return (
-    <div
-      className={`absolute glass rounded-xl px-4 py-3 shadow-card z-20 ${className}`}
-      style={{ animation: `float 5s ease-in-out ${delay} infinite` }}
-    >
-      <div className="flex items-center gap-2 text-[10px] uppercase tracking-wider text-muted-foreground">
-        <span className={`h-1.5 w-1.5 rounded-full ${dot} animate-pulse`} />
-        {label}
-      </div>
-      <div className="mt-1 font-display text-xl font-bold text-foreground">{value}</div>
     </div>
   );
 }
