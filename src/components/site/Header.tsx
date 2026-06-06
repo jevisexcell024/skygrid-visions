@@ -1,36 +1,45 @@
 import { Menu } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import kumoraLogo from "@/assets/kumora-logo.png.asset.json";
 
-const NAV = ["Features", "Navigation", "Admin", "Pricing", "Testimonials", "Blog"];
+const NAV: { label: string; to: string }[] = [
+  { label: "Solutions", to: "/solutions" },
+  { label: "Customers", to: "/customers" },
+  { label: "About", to: "/about" },
+  { label: "Resources", to: "/resources" },
+];
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/70 border-b border-border/50">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/85 border-b border-border">
       <div className="container-1400 flex h-20 items-center justify-between">
-        <a href="#" className="flex items-center">
-          <img src={kumoraLogo.url} alt="Kumora" className="h-10 w-auto" />
-        </a>
+        <Link to="/" className="flex items-center">
+          <img src={kumoraLogo.url} alt="Kumora" className="h-9 w-auto" />
+        </Link>
 
-
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
           {NAV.map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group">
-              {item}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-amber-brand group-hover:w-full transition-all duration-300" />
-            </a>
+            <Link
+              key={item.to}
+              to={item.to}
+              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
+              activeProps={{ className: "text-foreground" }}
+            >
+              {item.label}
+            </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <Button variant="ghost" className="hidden sm:inline-flex text-foreground/80 hover:text-foreground">
-            Book Demo
-          </Button>
-          <Button className="bg-amber-brand text-background hover:bg-amber-brand/90 font-semibold shadow-glow-amber">
-            Start Free Trial
-          </Button>
-          <button className="lg:hidden p-2"><Menu className="h-5 w-5" /></button>
+        <div className="flex items-center gap-2">
+          <Link to="/contact" className="hidden sm:inline-flex">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium rounded-md">
+              Get in touch
+            </Button>
+          </Link>
+          <button className="lg:hidden p-2" aria-label="Open menu">
+            <Menu className="h-5 w-5" />
+          </button>
         </div>
       </div>
     </header>
