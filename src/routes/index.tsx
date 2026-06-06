@@ -14,10 +14,10 @@ import { Footer } from "@/components/site/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "CloudNova — Cloud hosting built for scale" },
-      { name: "description", content: "Lightning-fast NVMe cloud hosting across 50+ global data centers. 99.99% uptime, enterprise security, and developer-first tooling." },
-      { property: "og:title", content: "CloudNova — Cloud hosting built for scale" },
-      { property: "og:description", content: "Deploy in seconds, scale infinitely, sleep well. 99.99% uptime guaranteed." },
+      { title: "Kumora — The Intelligent Campus Operating System" },
+      { name: "description", content: "Kumora is the smart campus management platform for universities and institutions. Manage learning, security, navigation, communications & operations in one intelligent system." },
+      { property: "og:title", content: "Kumora — Smart Campus Infrastructure" },
+      { property: "og:description", content: "The intelligent operating system for modern campuses. Trusted by 200+ institutions." },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

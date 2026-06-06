@@ -1,13 +1,13 @@
-import { Zap, ShieldCheck, Headphones, Globe2, Database, GitBranch } from "lucide-react";
+import { Brain, ShieldCheck, Headphones, Layers, BarChart3, Plug } from "lucide-react";
 import whyImg from "@/assets/why-choose.png";
 
 const FEATURES = [
-  { icon: Zap, title: "Lightning-fast NVMe", desc: "All-flash storage with 10× faster reads than standard SSDs." },
-  { icon: ShieldCheck, title: "Enterprise security", desc: "WAF, DDoS protection, and automated malware scanning included." },
-  { icon: Globe2, title: "50+ global regions", desc: "Edge deployments on 6 continents for sub-50ms latency anywhere." },
-  { icon: Database, title: "Auto-scaling clusters", desc: "Resources scale instantly with traffic spikes — no downtime." },
-  { icon: GitBranch, title: "One-click deploys", desc: "Push to Git and we handle the rest. Atomic, rollback-ready." },
-  { icon: Headphones, title: "24/7 expert support", desc: "Real engineers, not bots. Avg first response under 90 seconds." },
+  { icon: Brain, title: "AI-first intelligence", desc: "Every module is enhanced by predictive insights that learn your campus patterns." },
+  { icon: ShieldCheck, title: "Enterprise security", desc: "FERPA, GDPR, and SOC 2 ready — encryption at rest and in transit, by default." },
+  { icon: Layers, title: "Unified platform", desc: "12 modules under one login. No more juggling disconnected campus systems." },
+  { icon: BarChart3, title: "Real-time analytics", desc: "Live dashboards for leadership — attendance, finance, wellbeing, all in one view." },
+  { icon: Plug, title: "Open integrations", desc: "Plug into your LMS, ERP, payment gateway, and biometric devices in days, not months." },
+  { icon: Headphones, title: "24/7 expert support", desc: "Real engineers, not bots. Average first response under 90 seconds." },
 ];
 
 export function WhyChooseUs() {
@@ -19,7 +19,7 @@ export function WhyChooseUs() {
           <div className="absolute inset-20 rounded-full bg-amber-brand/15 blur-3xl animate-pulse-glow" />
           <img
             src={whyImg}
-            alt="Cloud infrastructure with floating server clusters and security indicators"
+            alt="Kumora intelligent campus infrastructure dashboard"
             width={1024}
             height={1024}
             loading="lazy"
@@ -29,14 +29,14 @@ export function WhyChooseUs() {
 
         <div className="order-1 lg:order-2">
           <div className="inline-flex px-3 py-1 rounded-full glass text-xs font-medium text-amber-brand uppercase tracking-wider">
-            Why CloudNova
+            Why Kumora
           </div>
           <h2 className="mt-4 text-4xl md:text-5xl font-bold leading-tight">
             Infrastructure that <span className="text-gradient-amber">just works</span>.
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Built by engineers who got tired of paging at 3am. Every layer
-            obsessively tuned for speed, reliability, and developer joy.
+            Built by educators and engineers who got tired of fragmented campus tools.
+            Every layer obsessively tuned for reliability, intelligence, and ease of use.
           </p>
 
           <div className="mt-10 grid sm:grid-cols-2 gap-x-6 gap-y-7">

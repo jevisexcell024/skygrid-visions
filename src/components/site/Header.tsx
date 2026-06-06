@@ -1,7 +1,7 @@
-import { Cloud, Menu } from "lucide-react";
+import { GraduationCap, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const NAV = ["Hosting", "Domains", "Servers", "Security", "Pricing", "Blog"];
+const NAV = ["Features", "Navigation", "Admin", "Pricing", "Testimonials", "Blog"];
 
 export function Header() {
   return (
@@ -11,10 +11,10 @@ export function Header() {
           <div className="relative">
             <div className="absolute inset-0 bg-amber-brand rounded-lg blur-lg opacity-50 group-hover:opacity-80 transition-opacity" />
             <div className="relative h-10 w-10 rounded-lg bg-gradient-to-br from-amber-brand to-burgundy grid place-items-center">
-              <Cloud className="h-5 w-5 text-background" strokeWidth={2.5} />
+              <GraduationCap className="h-5 w-5 text-background" strokeWidth={2.5} />
             </div>
           </div>
-          <span className="font-display text-xl font-bold tracking-tight">CloudNova</span>
+          <span className="font-display text-xl font-bold tracking-tight">Kumora</span>
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
@@ -29,10 +29,10 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <Button variant="ghost" className="hidden sm:inline-flex text-foreground/80 hover:text-foreground">
-            Sign In
+            Book Demo
           </Button>
           <Button className="bg-amber-brand text-background hover:bg-amber-brand/90 font-semibold shadow-glow-amber">
-            Get Started
+            Start Free Trial
           </Button>
           <button className="lg:hidden p-2"><Menu className="h-5 w-5" /></button>
         </div>

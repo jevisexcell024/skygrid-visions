@@ -5,7 +5,6 @@ import heroCloud from "@/assets/hero-cloud.png";
 export function Hero() {
   return (
     <section className="relative overflow-hidden section-pad">
-      {/* Background blurs */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute top-20 -left-40 h-[500px] w-[500px] rounded-full bg-burgundy/30 blur-[120px]" />
         <div className="absolute -bottom-20 right-0 h-[600px] w-[600px] rounded-full bg-amber-brand/15 blur-[140px]" />
@@ -16,24 +15,23 @@ export function Hero() {
       </div>
 
       <div className="container-1400 grid lg:grid-cols-[45fr_55fr] gap-12 items-center">
-        {/* Left */}
         <div className="animate-fade-up">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-medium">
             <span className="h-2 w-2 rounded-full bg-amber-brand animate-pulse" />
-            <span className="text-amber-brand">NEW</span>
-            <span className="text-muted-foreground">·  Enterprise-grade NVMe servers now live</span>
+            <span className="text-amber-brand">LIVE</span>
+            <span className="text-muted-foreground">·  Now serving 200+ institutions globally</span>
           </div>
 
           <h1 className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
-            Cloud hosting
+            The intelligent OS for
             <br />
-            built for{" "}
-            <span className="text-gradient-amber">scale</span>.
+            <span className="text-gradient-amber">modern campuses</span>.
           </h1>
 
           <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
-            Lightning-fast infrastructure spanning 50+ global data centers. Deploy in seconds,
-            scale infinitely, and sleep well with 99.99% uptime guaranteed.
+            Kumora unifies student management, campus navigation, security, scheduling, and
+            analytics into one coherent platform — purpose-built for universities, colleges,
+            and learning institutions.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
@@ -48,13 +46,12 @@ export function Hero() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-amber-brand" /> SOC 2 Type II</div>
-            <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-amber-brand" /> 99.99% Uptime</div>
-            <div className="flex items-center gap-2"><Award className="h-4 w-4 text-amber-brand" /> 4.9/5 · 12k+ reviews</div>
+            <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-amber-brand" /> FERPA Compliant</div>
+            <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-amber-brand" /> 99.97% Uptime</div>
+            <div className="flex items-center gap-2"><Award className="h-4 w-4 text-amber-brand" /> 12M+ Students Managed</div>
           </div>
         </div>
 
-        {/* Right — illustration */}
         <HeroIllustration />
       </div>
     </section>
@@ -64,11 +61,9 @@ export function Hero() {
 function HeroIllustration() {
   return (
     <div className="relative aspect-square w-full max-w-[700px] mx-auto">
-      {/* Background glows */}
       <div className="absolute inset-10 rounded-full bg-amber-brand/20 blur-3xl animate-pulse-glow" />
       <div className="absolute inset-20 rounded-full bg-burgundy/30 blur-3xl" />
 
-      {/* Rotating ring */}
       <div className="absolute inset-0 animate-spin-slow opacity-60">
         <svg viewBox="0 0 400 400" className="w-full h-full">
           <circle cx="200" cy="200" r="180" fill="none" stroke="url(#ringGrad)" strokeWidth="0.5" strokeDasharray="4 8" />
@@ -81,46 +76,19 @@ function HeroIllustration() {
         </svg>
       </div>
 
-      {/* Main image */}
       <img
         src={heroCloud}
-        alt="CloudNova cloud infrastructure platform with floating servers and dashboards"
+        alt="Kumora intelligent campus operating system with floating dashboards"
         width={1024}
         height={1024}
         className="relative z-10 w-full h-full object-contain animate-float drop-shadow-2xl"
       />
 
-      {/* Floating stat cards */}
-      <FloatingStat
-        className="top-6 -left-2 md:left-0"
-        label="CPU"
-        value="42%"
-        accent="amber"
-        delay="0s"
-      />
-      <FloatingStat
-        className="top-1/4 -right-2 md:-right-4"
-        label="Uptime"
-        value="99.99%"
-        accent="green"
-        delay="1.5s"
-      />
-      <FloatingStat
-        className="bottom-16 -left-4 md:-left-6"
-        label="Bandwidth"
-        value="2.4 TB/s"
-        accent="burgundy"
-        delay="0.8s"
-      />
-      <FloatingStat
-        className="bottom-2 right-4"
-        label="RAM"
-        value="64 GB"
-        accent="amber"
-        delay="2.2s"
-      />
+      <FloatingStat className="top-6 -left-2 md:left-0" label="Attendance" value="94.7%" accent="amber" delay="0s" />
+      <FloatingStat className="top-1/4 -right-2 md:-right-4" label="Uptime" value="99.97%" accent="green" delay="1.5s" />
+      <FloatingStat className="bottom-16 -left-4 md:-left-6" label="Students" value="12,847" accent="burgundy" delay="0.8s" />
+      <FloatingStat className="bottom-2 right-4" label="Faculty" value="142" accent="amber" delay="2.2s" />
 
-      {/* Particles */}
       {[...Array(14)].map((_, i) => (
         <span
           key={i}
