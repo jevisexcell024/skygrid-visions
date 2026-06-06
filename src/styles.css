@@ -105,7 +105,8 @@
 @layer base {
   * { border-color: var(--color-border); }
   html { scroll-behavior: smooth; }
-  body, * { border-radius: 0 !important; }
+  * { border-radius: 0 !important; }
+  body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
