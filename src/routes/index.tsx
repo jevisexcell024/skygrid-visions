@@ -128,8 +128,14 @@ function Index() {
       </section>
 
       {/* Modules grid */}
-      <section className="section-pad bg-surface border-y border-border">
-        <div className="container-1400">
+      <section className="section-pad bg-surface border-y border-border relative overflow-hidden">
+        <AnimatedGridPattern
+          numSquares={32}
+          maxOpacity={0.18}
+          duration={3}
+          className="text-primary [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
+        />
+        <div className="container-1400 relative z-[2]">
           <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
             <div className="max-w-2xl">
               <p className="eyebrow">The platform</p>
