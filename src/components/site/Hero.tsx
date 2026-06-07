@@ -1,11 +1,13 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
+import { Spotlight } from "@/components/ui/spotlight";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-ink text-white pt-24 md:pt-32 pb-20 md:pb-28">
-      <div className="container-1400">
+      <Spotlight className="-top-40 left-0 md:-top-20 md:left-60" fill="#FFC107" />
+      <div className="container-1400 relative z-[2]">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
           <div className="animate-fade-up">
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.02] tracking-tight text-white">
