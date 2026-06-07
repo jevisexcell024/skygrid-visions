@@ -43,12 +43,18 @@ export function Hero() {
           <p className="text-xs font-medium tracking-[0.15em] uppercase text-white/50">
             Trusted by leading institutions
           </p>
-          <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-x-10 gap-y-6 items-center">
-            {["APEX UNIVERSITY", "NORTHFIELD", "GLOBAL TECH", "MERIDIAN", "ATLAS COLLEGE"].map((n) => (
-              <div key={n} className="font-display text-base font-semibold tracking-wider text-white/65">
-                {n}
-              </div>
-            ))}
+          <div className="mt-6 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+            <div className="flex w-max gap-16 animate-marquee">
+              {[...Array(2)].map((_, dup) => (
+                <div key={dup} className="flex shrink-0 gap-16 pr-16">
+                  {["APEX UNIVERSITY", "NORTHFIELD", "GLOBAL TECH", "MERIDIAN", "ATLAS COLLEGE", "RIDGEMONT", "CASCADE TECH", "HARBOR STATE"].map((n) => (
+                    <div key={n} className="font-display text-base font-semibold tracking-wider text-white/65 whitespace-nowrap">
+                      {n}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

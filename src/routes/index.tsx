@@ -20,6 +20,8 @@ import { Footer } from "@/components/site/Footer";
 import { Button } from "@/components/ui/button";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Meteors } from "@/components/ui/meteors";
+import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
+import { CountUp } from "@/components/ui/count-up";
 import { CASE_STUDIES } from "@/data/case-studies";
 
 export const Route = createFileRoute("/")({
@@ -45,11 +47,11 @@ const PILLARS = [
   { icon: Layers, title: "One unified platform", desc: "Twelve modules under one login. No more juggling disconnected campus systems." },
 ];
 
-const STATS = [
-  { value: "200+", label: "Institutions on Kumora" },
-  { value: "1.2M", label: "Students managed daily" },
-  { value: "99.97%", label: "Platform uptime" },
-  { value: "40 hrs", label: "Saved per campus / week" },
+const STATS: Array<{ end: number; prefix?: string; suffix: string; decimals?: number; label: string }> = [
+  { end: 200, suffix: "+", label: "Institutions on Kumora" },
+  { end: 1.2, suffix: "M", decimals: 1, label: "Students managed daily" },
+  { end: 99.97, suffix: "%", decimals: 2, label: "Platform uptime" },
+  { end: 40, suffix: " hrs", label: "Saved per campus / week" },
 ];
 
 const MODULES = [
@@ -88,7 +90,9 @@ function Index() {
         <div className="container-1400 py-14 grid grid-cols-2 md:grid-cols-4 gap-8">
           {STATS.map((s) => (
             <div key={s.label}>
-              <div className="font-display text-4xl md:text-5xl font-medium" style={{ color: "var(--amber-brand)" }}>{s.value}</div>
+              <div className="font-display text-4xl md:text-5xl font-medium" style={{ color: "var(--amber-brand)" }}>
+                <CountUp end={s.end} suffix={s.suffix} decimals={s.decimals ?? 0} />
+              </div>
               <div className="mt-2 text-sm text-primary-foreground/75">{s.label}</div>
             </div>
           ))}
@@ -124,8 +128,14 @@ function Index() {
       </section>
 
       {/* Modules grid */}
-      <section className="section-pad bg-surface border-y border-border">
-        <div className="container-1400">
+      <section className="section-pad bg-surface border-y border-border relative overflow-hidden">
+        <AnimatedGridPattern
+          numSquares={32}
+          maxOpacity={0.18}
+          duration={3}
+          className="text-primary [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
+        />
+        <div className="container-1400 relative z-[2]">
           <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
             <div className="max-w-2xl">
               <p className="eyebrow">The platform</p>
