@@ -20,7 +20,7 @@ export function AnimatedGridPattern({
   duration = 4,
 }: Props) {
   const id = useId();
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<SVGSVGElement>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [squares, setSquares] = useState(() => generateSquares(numSquares, { width: 0, height: 0 }));
 
