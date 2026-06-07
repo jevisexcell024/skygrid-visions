@@ -47,11 +47,11 @@ const PILLARS = [
   { icon: Layers, title: "One unified platform", desc: "Twelve modules under one login. No more juggling disconnected campus systems." },
 ];
 
-const STATS = [
-  { value: "200+", label: "Institutions on Kumora" },
-  { value: "1.2M", label: "Students managed daily" },
-  { value: "99.97%", label: "Platform uptime" },
-  { value: "40 hrs", label: "Saved per campus / week" },
+const STATS: Array<{ end: number; prefix?: string; suffix: string; decimals?: number; label: string }> = [
+  { end: 200, suffix: "+", label: "Institutions on Kumora" },
+  { end: 1.2, suffix: "M", decimals: 1, label: "Students managed daily" },
+  { end: 99.97, suffix: "%", decimals: 2, label: "Platform uptime" },
+  { end: 40, suffix: " hrs", label: "Saved per campus / week" },
 ];
 
 const MODULES = [
