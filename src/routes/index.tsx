@@ -18,6 +18,8 @@ import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { Footer } from "@/components/site/Footer";
 import { Button } from "@/components/ui/button";
+import { BackgroundBeams } from "@/components/ui/background-beams";
+import { Meteors } from "@/components/ui/meteors";
 import { CASE_STUDIES } from "@/data/case-studies";
 
 export const Route = createFileRoute("/")({
@@ -271,8 +273,9 @@ function Index() {
       </section>
 
       {/* Quote */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="container-narrow py-20 md:py-28 text-center">
+      <section className="relative overflow-hidden bg-primary text-primary-foreground">
+        <BackgroundBeams className="text-primary-foreground" />
+        <div className="container-narrow py-20 md:py-28 text-center relative z-[2]">
           <p className="font-display text-2xl md:text-4xl font-medium leading-snug tracking-tight">
             "Kumora replaced four vendors and a decade of duct tape. Our staff now spend
             their days with students — not with spreadsheets."
@@ -330,22 +333,23 @@ function Index() {
       </section>
 
       {/* Closing CTA */}
-      <section className="section-pad">
-        <div className="container-narrow text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight">
+      <section className="section-pad relative overflow-hidden bg-ink text-white">
+        <Meteors number={24} />
+        <div className="container-narrow text-center relative z-[2]">
+          <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-white">
             Ready to see Kumora on your campus?
           </h2>
-          <p className="mt-5 text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-5 text-lg text-white/70 max-w-2xl mx-auto">
             Book a 30-minute walkthrough with a Kumora architect. We'll map your existing systems and propose a phased migration.
           </p>
           <div className="mt-9 flex flex-wrap gap-3 justify-center">
             <Link to="/contact">
-              <Button size="lg" className="h-12 px-6 bg-primary text-primary-foreground hover:bg-primary/90 font-medium rounded-md">
+              <Button size="lg" className="h-12 px-6 bg-primary text-primary-foreground hover:bg-primary/90 font-medium">
                 Schedule consultation
               </Button>
             </Link>
             <Link to="/solutions">
-              <Button size="lg" variant="outline" className="h-12 px-6 border-border bg-card hover:bg-secondary font-medium rounded-md">
+              <Button size="lg" variant="outline" className="h-12 px-6 border-white/25 bg-transparent text-white hover:bg-white/10 hover:text-white font-medium">
                 Explore solutions
               </Button>
             </Link>
