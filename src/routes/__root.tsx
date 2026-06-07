@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Kumora" },
+      { name: "description", content: "Kumora is a smart campus navigation platform that helps students, staff, and visitors quickly find buildings, classrooms, offices, and facilities with real-time" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Kumora" },
+      { property: "og:description", content: "Kumora is a smart campus navigation platform that helps students, staff, and visitors quickly find buildings, classrooms, offices, and facilities with real-time" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Kumora" },
+      { name: "twitter:description", content: "Kumora is a smart campus navigation platform that helps students, staff, and visitors quickly find buildings, classrooms, offices, and facilities with real-time" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/hQMlLIj4reVpWNNURpDfoGUBpIH2/social-images/social-1780850767148-Screenshot_2026-06-06_210704.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/hQMlLIj4reVpWNNURpDfoGUBpIH2/social-images/social-1780850767148-Screenshot_2026-06-06_210704.webp" },
     ],
     links: [
       {
