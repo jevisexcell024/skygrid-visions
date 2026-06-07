@@ -90,7 +90,9 @@ function Index() {
         <div className="container-1400 py-14 grid grid-cols-2 md:grid-cols-4 gap-8">
           {STATS.map((s) => (
             <div key={s.label}>
-              <div className="font-display text-4xl md:text-5xl font-medium" style={{ color: "var(--amber-brand)" }}>{s.value}</div>
+              <div className="font-display text-4xl md:text-5xl font-medium" style={{ color: "var(--amber-brand)" }}>
+                <CountUp end={s.end} suffix={s.suffix} decimals={s.decimals ?? 0} />
+              </div>
               <div className="mt-2 text-sm text-primary-foreground/75">{s.label}</div>
             </div>
           ))}
