@@ -18,7 +18,7 @@ export function PageLoader() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] grid place-items-center bg-background pointer-events-none"
+      className="fixed inset-0 z-[100] grid place-items-center bg-primary pointer-events-none"
       style={{
         opacity: fading ? 0 : 1,
         transition: "opacity 600ms ease",
@@ -26,20 +26,28 @@ export function PageLoader() {
       aria-hidden="true"
     >
       <div
-        className="flex items-center gap-3"
+        className="flex flex-col items-center gap-4"
         style={{
           animation: "loader-pop 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both",
         }}
       >
-        <img src={kumoraLogo.url} alt="" className="h-10 w-auto" />
+        <img src={kumoraLogo.url} alt="" className="h-12 w-auto" />
+        <span
+          className="text-4xl font-bold tracking-[0.3em] text-primary-foreground"
+          style={{
+            animation: "loader-text-reveal 900ms cubic-bezier(0.2, 0.7, 0.2, 1) 200ms both",
+          }}
+        >
+          KUMORA
+        </span>
       </div>
       <span
-        className="absolute bottom-16 block h-[2px] w-40 overflow-hidden bg-foreground/10"
+        className="absolute bottom-16 block h-[2px] w-40 overflow-hidden bg-primary-foreground/20"
       >
         <span
           className="block h-full"
           style={{
-            background: "var(--primary)",
+            background: "var(--accent)",
             animation: "loader-bar 1.4s ease-in-out both",
           }}
         />
@@ -53,6 +61,10 @@ export function PageLoader() {
           0% { width: 0%; }
           60% { width: 85%; }
           100% { width: 100%; }
+        }
+        @keyframes loader-text-reveal {
+          0% { opacity: 0; transform: translateY(12px); letter-spacing: 0.6em; filter: blur(4px); }
+          100% { opacity: 1; transform: translateY(0); letter-spacing: 0.3em; filter: blur(0); }
         }
       `}</style>
     </div>
