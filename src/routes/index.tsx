@@ -19,7 +19,6 @@ import { Hero } from "@/components/site/Hero";
 import { Footer } from "@/components/site/Footer";
 import { Button } from "@/components/ui/button";
 import { BackgroundBeams } from "@/components/ui/background-beams";
-import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Meteors } from "@/components/ui/meteors";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 import { CountUp } from "@/components/ui/count-up";
